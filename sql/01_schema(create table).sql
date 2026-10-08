@@ -41,11 +41,3 @@ CREATE TABLE rekam_medis (
     CONSTRAINT fk_rekam_medis_kunjungan FOREIGN KEY (id_kunjungan) 
         REFERENCES kunjungan(id_kunjungan) ON DELETE RESTRICT ON UPDATE CASCADE
 );
-
-CREATE TRIGGER TR_AuditPendaftaran
-AFTER INSERT ON pendaftaran
-FOR EACH ROW
-BEGIN
-    INSERT INTO log_pendaftaran (id_siswa, id_kursus, aktivitas, tanggal_log)
-    VALUES (NEW.id_siswa, NEW.id_kursus, 'Siswa terdaftar baru', NOW());
-END
