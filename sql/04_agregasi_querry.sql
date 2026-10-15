@@ -17,11 +17,14 @@ SELECT
     SUM(total_tagihan) AS grand_total_pendapatan
 FROM rekam_medis;
 
--- 3. Filter dokter yang memiliki total kunjungan lebih dari 0 (Contoh klausal HAVING)
+-- 3. Filter dokter yang memiliki total kunjungan lebih dari 150.000 (Contoh klausal HAVING)
 SELECT 
     d.nama_dokter,
-    COUNT(k.id_kunjungan) AS total_kunjungan
+    COUNT(rm.id_rekam_medis) AS jumlah_pemeriksaan,
+    SUM(rm.total_tagihan) AS total_tagihan
 FROM dokter d
 JOIN kunjungan k ON d.id_dokter = k.id_dokter
+JOIN rekam_medis rm ON k.id_kunjungan = rm.id_kunjungan
 GROUP BY d.id_dokter, d.nama_dokter
-HAVING COUNT(k.id_kunjungan) > 0;
+HAVING SUM(rm.total_tagihan) > 150000;
+

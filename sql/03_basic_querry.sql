@@ -20,3 +20,6 @@ FROM kunjungan k
 JOIN pasien p ON k.id_pasien = p.id_pasien
 JOIN dokter d ON k.id_dokter = d.id_dokter
 WHERE k.status_kunjungan IN ('Daftar', 'Pemeriksaan');
+
+-- pasien nomor 1 sudah punya kunjungan, jadi harusnya DITOLAK  
+DELETE FROM pasien WHERE id_pasien = 1;

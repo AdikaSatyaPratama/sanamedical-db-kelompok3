@@ -1,4 +1,11 @@
+CREATE DATABASE IF NOT EXISTS sanamedical_db;
 USE sanamedical_db;
+
+DROP TABLE IF EXISTS rekam_medis;
+DROP TABLE IF EXISTS kunjungan;
+DROP TABLE IF EXISTS dokter;
+DROP TABLE IF EXISTS pasien;
+
 CREATE TABLE pasien (
     id_pasien INT AUTO_INCREMENT PRIMARY KEY,
     no_rekam_medis VARCHAR(20) NOT NULL UNIQUE,
