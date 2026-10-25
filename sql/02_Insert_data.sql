@@ -2,7 +2,7 @@
 INSERT INTO pasien (no_rekam_medis, nama_pasien, tanggal_lahir, jenis_kelamin, alamat, no_telepon) VALUES
 ('RM-2026-001', 'Estes Solo Lord', '2005-09-12', 'L', 'Jl. Udayana No. 12, Singaraja', '081234567890'),
 ('RM-2026-002', 'Made Dewi', '1998-11-20', 'P', 'Jl. Ahmad Yani No. 45, Singaraja', '089876543210'),
-('RM-2026-003', 'Made Dewi', '1998-11-20', 'P', 'Jl. Ahmad Yani No. 45, Singaraja', '089876543210'),
+('RM-2026-003', 'Made Dewi', '1998-11-20', 'P', 'Jl. Ahmad Yani No. 45, Singaraja', '089876543210');
 
 
 -- Insert Data Dokter
