@@ -48,3 +48,12 @@ CREATE TABLE rekam_medis (
     CONSTRAINT fk_rekam_medis_kunjungan FOREIGN KEY (id_kunjungan) 
         REFERENCES kunjungan(id_kunjungan) ON DELETE RESTRICT ON UPDATE CASCADE
 );
+
+
+SHOW TABLES;
+DESCRIBE pasien;
+DESCRIBE dokter;
+DESCRIBE kunjungan;
+DESCRIBE rekam_medis;
+
+
