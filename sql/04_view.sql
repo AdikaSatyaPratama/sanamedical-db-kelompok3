@@ -1,4 +1,12 @@
 USE sanamedical_db;
+
+-- kueri untuk uji constrait
+DELETE FROM pasien WHERE id_pasien = 1;
+DELETE FROM dokter WHERE id_dokter = 1;
+INSERT INTO kunjungan (id_pasien, id_dokter, keluhan_utama) VALUES (99, 1, 'tes');
+INSERT INTO kunjungan (id_pasien, id_dokter, keluhan_utama) VALUES (99, 1, 'tes');
+
+
 CREATE OR REPLACE VIEW V_AntreanKlinikHariIni AS
 SELECT
     k.id_kunjungan,
