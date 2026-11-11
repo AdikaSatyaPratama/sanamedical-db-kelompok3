@@ -48,24 +48,27 @@ SELECT nama_dokter, no_izin_praktik, tarif_jasa_medis, spesialisasi
 FROM dokter
 WHERE spesialisasi= 'Dokter Umum';
 
-SELECT k.id_kunjungan, p.nama_pasien, d.nama_dokter, k.tanggal_kunjungan, k.keluhan_utama, k.status_kunjungan
-FROM kunjungan k
-JOIN pasien p ON k.id_pasien = p.id_pasien
-JOIN dokter d ON k.id_dokter = d.id_dokter
-WHERE k.status_kunjungan IN ('Daftar', 'Pemeriksaan');
+SELECT id_kunjungan, tanggal_kunjungan, keluhan_utama, status_kunjungan
+FROM kunjungan 
+WHERE status_kunjungan IN ('Daftar', 'Pemeriksaan'); 
 
-SELECT k.id_kunjungan, k.tanggal_kunjungan, p.nama_pasien, d.nama_dokter, 
-       k.keluhan_utama, k.status_kunjungan
-FROM kunjungan k
-JOIN pasien p ON k.id_pasien = p.id_pasien
-JOIN dokter d ON k.id_dokter = d.id_dokter
-WHERE d.nama_dokter = 'dr. Siti Aminah';
 
-SELECT k.id_kunjungan, k.keluhan_utama, k.status_kunjungan, r.diagnosa
-FROM rekam_medis r
-JOIN kunjungan k USING (id_kunjungan);
 
 DELETE FROM pasien WHERE id_pasien = 1;
+
+
+
+SELECT nama_dokter, no_izin_praktik,
+       tarif_jasa_medis, spesialisasi
+FROM dokter
+WHERE spesialisasi = 'Dokter Umum';
+
+SELECT nama_pasien, tanggal_lahir, jenis_kelamin FROM pasien
+WHERE jenis_kelamin = 'L';
+
+SELECT nama_pasien, tanggal_lahir, jenis_kelamin FROM pasien
+WHERE jenis_kelamin = 'P';
+
 
 SELECT * FROM kunjungan;
 SELECT * FROM dokter;
