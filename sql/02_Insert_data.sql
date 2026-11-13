@@ -52,7 +52,8 @@ SELECT id_kunjungan, tanggal_kunjungan, keluhan_utama, status_kunjungan
 FROM kunjungan 
 WHERE status_kunjungan IN ('Daftar', 'Pemeriksaan'); 
 
-
+INSERT INTO kunjungan (id_pasien, id_dokter, tanggal_kunjungan, keluhan_utama, status_kunjungan) VALUES
+(1, 4, NOW(), 'Demam tinggi dan pusing sejak 2 hari', 'Daftar');
 
 DELETE FROM pasien WHERE id_pasien = 1;
 
@@ -72,3 +73,5 @@ WHERE jenis_kelamin = 'P';
 
 SELECT * FROM kunjungan;
 SELECT * FROM dokter;
+
+SELECT * FROM rekam_medis;
