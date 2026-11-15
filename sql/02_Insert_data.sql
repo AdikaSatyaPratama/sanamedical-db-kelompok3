@@ -14,14 +14,14 @@ INSERT INTO dokter (nama_dokter, spesialisasi, no_izin_praktik, tarif_jasa_medis
 INSERT INTO kunjungan (id_pasien, id_dokter, tanggal_kunjungan, keluhan_utama, status_kunjungan) VALUES
 (1, 1, NOW(), 'Demam tinggi dan pusing sejak 2 hari', 'Daftar'),
 (2, 2, NOW(), 'Batuk berdahak dan flu', 'Pemeriksaan'),
-(2, 3, NOW(), 'Sakit kepala', 'Daftar');
+(3, 3, NOW(), 'Sakit kepala', 'Daftar');
 
 -- Kunjungan lama yang sudah selesai -> id_kunjungan 4, 5, 6, 7
 INSERT INTO kunjungan (id_pasien, id_dokter, tanggal_kunjungan, keluhan_utama, status_kunjungan) VALUES
 (1, 1, '2026-09-20 09:00:00', 'Sakit perut', 'Selesai'),
-(2, 1, '2026-09-25 10:30:00', 'Tekanan darah tinggi', 'Selesai'),
-(1, 2, '2026-10-01 08:15:00', 'Batuk pilek', 'Selesai'),
-(2, 2, '2026-10-02 14:00:00', 'Sakit kepala', 'Batal');
+(2, 2, '2026-09-25 10:30:00', 'Tekanan darah tinggi', 'Selesai'),
+(1, 1, '2026-10-01 08:15:00', 'Batuk pilek', 'Selesai'),
+(3, 3, '2026-10-02 14:00:00', 'Sakit kepala', 'Batal');
 
 -- Rekam medis -> merujuk id_kunjungan 4, 5, 6 (yang berstatus 'Selesai'), id kunjungan 7 tidak ada karena di kunjungan yang id_pasien nya 2, dan id_dokter nya 2 itu status nya batal
 INSERT INTO rekam_medis (id_kunjungan, diagnosa, terapi_obat, biaya_jasa_dokter, biaya_obat) VALUES
@@ -70,7 +70,7 @@ WHERE jenis_kelamin = 'L';
 SELECT nama_pasien, tanggal_lahir, jenis_kelamin FROM pasien
 WHERE jenis_kelamin = 'P';
 
-
+SELECT * FROM pasien;
 SELECT * FROM kunjungan;
 SELECT * FROM dokter;
 
