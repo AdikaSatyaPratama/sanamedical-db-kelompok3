@@ -56,4 +56,4 @@ DESCRIBE dokter;
 DESCRIBE kunjungan;
 DESCRIBE rekam_medis;
 
-
+SHOW CREATE TABLE pasien;
