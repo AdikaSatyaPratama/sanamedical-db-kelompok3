@@ -10,24 +10,33 @@ INSERT INTO dokter (nama_dokter, spesialisasi, no_izin_praktik, tarif_jasa_medis
 ('dr. Siti Aminah', 'Dokter Umum', 'SIP/002/2024', 80000.00),
 ('dr. Anang Jua', 'Dokter Umum', 'SIP/003/2024', 180000.00);
 
+INSERT INTO dokter (nama_dokter, spesialisasi, no_izin_praktik, tarif_jasa_medis) VALUES
+('dr. Siti Aminah', 'Dokter Kandungan', 'SIP/004/2024', 200000.00);
+
 -- Insert Data Kunjungan (status awal, hari ini) -> id_kunjungan 1, 2, 3
 INSERT INTO kunjungan (id_pasien, id_dokter, tanggal_kunjungan, keluhan_utama, status_kunjungan) VALUES
 (1, 1, NOW(), 'Demam tinggi dan pusing sejak 2 hari', 'Daftar'),
 (2, 2, NOW(), 'Batuk berdahak dan flu', 'Pemeriksaan'),
 (3, 3, NOW(), 'Sakit kepala', 'Daftar');
-
+INSERT INTO kunjungan (id_pasien, id_dokter, tanggal_kunjungan, keluhan_utama, status_kunjungan) VALUES
+(3, 4, NOW(), 'mual mual', 'Pemeriksaan');
 -- Kunjungan lama yang sudah selesai -> id_kunjungan 4, 5, 6, 7
 INSERT INTO kunjungan (id_pasien, id_dokter, tanggal_kunjungan, keluhan_utama, status_kunjungan) VALUES
 (1, 1, '2026-09-20 09:00:00', 'Sakit perut', 'Selesai'),
 (2, 2, '2026-09-25 10:30:00', 'Tekanan darah tinggi', 'Selesai'),
 (1, 1, '2026-10-01 08:15:00', 'Batuk pilek', 'Selesai'),
 (3, 3, '2026-10-02 14:00:00', 'Sakit kepala', 'Batal');
+INSERT INTO kunjungan (id_pasien, id_dokter, tanggal_kunjungan, keluhan_utama, status_kunjungan) VALUES
+(3, 4, '2026-11-16 13:00:00', 'mual mual', 'Selesai');
 
 -- Rekam medis -> merujuk id_kunjungan 4, 5, 6 (yang berstatus 'Selesai'), id kunjungan 7 tidak ada karena di kunjungan yang id_pasien nya 2, dan id_dokter nya 2 itu status nya batal
 INSERT INTO rekam_medis (id_kunjungan, diagnosa, terapi_obat, biaya_jasa_dokter, biaya_obat) VALUES
 (4, 'Gastritis', 'Antasida, Omeprazole', 150000, 45000),
 (5, 'Hipertensi', 'Amlodipine', 150000, 60000),
 (6, 'ISPA ringan', 'Paracetamol, CTM', 80000, 25000);
+
+INSERT INTO rekam_medis (id_kunjungan, diagnosa, terapi_obat, biaya_jasa_dokter, biaya_obat) VALUES
+(9, 'Hamil', 'Vitamin C', 200000, 50000);
 
 -- Cek daftar kunjungan beserta nama pasien dan nama dokternya
 SELECT 

@@ -15,7 +15,7 @@ FROM dokter;
 -- Tarif termurah dan termahal
 SELECT MIN(tarif_jasa_medis) AS tarif_termurah,
        MAX(tarif_jasa_medis) AS tarif_termahal
-FROM dokter
+FROM dokter;
 
 
 -- MENGGUNAKAN KLAUSA ORDER BY
@@ -95,7 +95,7 @@ SELECT p.nama_pasien
 FROM kunjungan k JOIN pasien p ON k.id_pasien = p.id_pasien
 WHERE k.status_kunjungan IN ('Daftar', 'Pemeriksaan');
 
-SELECT p.nama_pasien
+SELECT p.nama_pasien 
 FROM kunjungan k JOIN pasien p ON k.id_pasien = p.id_pasien
 WHERE k.status_kunjungan = 'Selesai'
 UNION ALL
